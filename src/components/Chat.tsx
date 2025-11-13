@@ -1,4 +1,3 @@
-
 import React, { useState, useRef, useEffect } from 'react';
 import { getBotResponse } from '../services/geminiService';
 import Spinner from './common/Spinner';
