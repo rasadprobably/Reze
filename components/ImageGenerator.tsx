@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { generateImage } from '../services/geminiService';
 import { AspectRatio } from '../types';
 import Spinner from './common/Spinner';
-import { DownloadIcon } from '../../App';
+import { DownloadIcon } from '../src/components/Icons';
 
 const artStyles = ["Photorealistic", "Anime", "Cyberpunk", "Impressionism", "Steampunk", "Minimalist", "Fantasy Art", "Watercolor", "Abstract", "Cartoon", "Vintage"];
 const moods = ["Dramatic", "Serene", "Cheerful", "Mysterious", "Energetic"];

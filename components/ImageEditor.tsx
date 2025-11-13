@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { editImage } from '../services/geminiService';
 import Spinner from './common/Spinner';
 import FileUpload from './common/FileUpload';
-import { DownloadIcon } from '../../App';
+import { DownloadIcon } from '../src/components/Icons';
 
 const fileToBase64 = (file: File): Promise<string> => {
   return new Promise((resolve, reject) => {
