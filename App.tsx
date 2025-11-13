@@ -4,7 +4,9 @@ import { AppMode } from './types';
 import ImageGenerator from './components/ImageGenerator';
 import ImageEditor from './components/ImageEditor';
 import Chat from './components/Chat';
-import { SparklesIcon, BrushIcon, BoltIcon } from './src/components/Icons';
+// Fix: Import VideoGenerator and FilmIcon to integrate the video generation feature.
+import VideoGenerator from './components/VideoGenerator';
+import { SparklesIcon, BrushIcon, BoltIcon, FilmIcon } from './src/components/Icons';
 
 const App: React.FC = () => {
   const [mode, setMode] = useState<AppMode>(AppMode.ImageGeneration);
@@ -15,6 +17,9 @@ const App: React.FC = () => {
         return <ImageGenerator />;
       case AppMode.ImageEditing:
         return <ImageEditor />;
+      // Fix: Add a case to render the VideoGenerator component.
+      case AppMode.VideoGeneration:
+        return <VideoGenerator />;
       case AppMode.Chat:
         return <Chat />;
       default:
@@ -65,6 +70,12 @@ const App: React.FC = () => {
                   appMode={AppMode.ImageEditing}
                   label="Edit"
                   icon={<BrushIcon />}
+                />
+                {/* Fix: Add a NavButton for the VideoGenerator component. */}
+                <NavButton
+                  appMode={AppMode.VideoGeneration}
+                  label="Animate"
+                  icon={<FilmIcon />}
                 />
                 <NavButton
                   appMode={AppMode.Chat}

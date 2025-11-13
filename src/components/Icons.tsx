@@ -12,3 +12,9 @@ export const BoltIcon:React.FC<{className?: string}> = ({className}) => (
 export const DownloadIcon:React.FC<{className?: string}> = ({className}) => (
     <svg xmlns="http://www.w3.org/2000/svg" className={className} viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clipRule="evenodd" /></svg>
 );
+// Fix: Added FilmIcon for the video generator tab.
+export const FilmIcon:React.FC<{className?: string}> = ({className}) => (
+    <svg xmlns="http://www.w3.org/2000/svg" className={className} viewBox="0 0 20 20" fill="currentColor">
+        <path fillRule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm0 2h12v10H4V5zm2 1a1 1 0 00-1 1v1a1 1 0 102 0V7a1 1 0 00-1-1zm0 4a1 1 0 00-1 1v1a1 1 0 102 0v-1a1 1 0 00-1-1zm0 4a1 1 0 00-1 1v1a1 1 0 102 0v-1a1 1 0 00-1-1zm9-9a1 1 0 00-1 1v1a1 1 0 102 0V7a1 1 0 00-1-1zm0 4a1 1 0 00-1 1v1a1 1 0 102 0v-1a1 1 0 00-1-1zm0 4a1 1 0 00-1 1v1a1 1 0 102 0v-1a1 1 0 00-1-1zM9 6a1 1 0 00-1 1v6a1 1 0 102 0V7a1 1 0 00-1-1z" clipRule="evenodd" />
+    </svg>
+);

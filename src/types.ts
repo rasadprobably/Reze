@@ -1,6 +1,7 @@
 export enum AppMode {
   ImageGeneration = 'ImageGeneration',
   ImageEditing = 'ImageEditing',
+  VideoGeneration = 'VideoGeneration',
   Chat = 'Chat',
 }
 

@@ -1,3 +1,4 @@
+
 import { GoogleGenAI, Modality } from "@google/genai";
 import { AspectRatio } from "../types";
 
@@ -61,4 +62,37 @@ export const getBotResponse = async (prompt: string) => {
         }
     });
     return response.text;
+};
+
+// Fix: Implement generateVideoFromImage for video generation.
+export const generateVideoFromImage = async (
+    prompt: string,
+    imageBase64: string,
+    mimeType: string,
+    aspectRatio: '16:9' | '9:16'
+) => {
+    // Per guidelines for Veo, create a new instance before API call
+    const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+    const operation = await ai.models.generateVideos({
+        model: 'veo-3.1-fast-generate-preview',
+        prompt,
+        image: {
+            imageBytes: imageBase64,
+            mimeType: mimeType,
+        },
+        config: {
+            numberOfVideos: 1,
+            resolution: '720p',
+            aspectRatio: aspectRatio,
+        }
+    });
+    return operation;
+};
+
+// Fix: Implement pollVideoOperation to check video generation status.
+export const pollVideoOperation = async (operation: any) => {
+    // Per guidelines for Veo, create a new instance before API call
+    const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+    const updatedOperation = await ai.operations.getVideosOperation({ operation });
+    return updatedOperation;
 };
